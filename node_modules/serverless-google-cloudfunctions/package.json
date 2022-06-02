@@ -1,0 +1,86 @@
+{
+  "name": "serverless-google-cloudfunctions",
+  "version": "4.6.0",
+  "description": "Provider plugin for the Serverless Framework v1.x which adds support for Google Cloud Functions.",
+  "author": "serverless.com",
+  "repository": "serverless/serverless-google-cloudfunctions",
+  "homepage": "https://github.com/serverless/serverless-google-cloudfunctions",
+  "keywords": [
+    "serverless",
+    "serverless framework",
+    "serverless applications",
+    "serverless modules",
+    "google cloud functions",
+    "iot",
+    "internet of things",
+    "serverless.com"
+  ],
+  "eslintConfig": {
+    "extends": "@serverless/eslint-config/node",
+    "root": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ],
+    "*.{css,html,js,json,md,yaml,yml}": [
+      "prettier -c"
+    ]
+  },
+  "standard-version": {
+    "skip": {
+      "commit": true,
+      "tag": true
+    }
+  },
+  "dependencies": {
+    "async": "^2.6.4",
+    "bluebird": "^3.7.2",
+    "chalk": "^3.0.0",
+    "express": "4.18.1",
+    "fs-extra": "^8.1.0",
+    "get-stdin": "^8.0.0",
+    "googleapis": "^50.0.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@serverless/eslint-config": "^2.2.0",
+    "coveralls": "^3.1.1",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.26.0",
+    "git-list-updated": "^1.2.1",
+    "github-release-from-cc-changelog": "^2.3.0",
+    "husky": "^4.3.8",
+    "jest": "^25.5.4",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.6.2",
+    "sinon": "^8.1.1",
+    "standard-version": "^9.3.2"
+  },
+  "peerDependencies": {
+    "serverless": "2 || 3"
+  },
+  "scripts": {
+    "commitlint": "commitlint -f HEAD@{15}",
+    "commitlint:pull-request": "commitlint -f HEAD~1",
+    "coverage": "jest --coverage",
+    "lint": "eslint . --cache",
+    "lint:updated": "pipe-git-updated --ext=js -- eslint --cache",
+    "prepare-release": "standard-version && prettier --write CHANGELOG.md",
+    "prettier-check": "prettier -c --ignore-path .gitignore \"**/*.{css,html,js,json,md,yaml,yml}\"",
+    "prettier-check:updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier -c",
+    "prettify": "prettier --write --ignore-path .gitignore \"**/*.{css,html,js,json,md,yaml,yml}\"",
+    "prettify:updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier --write",
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">=10.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,22 @@
+	
+service: todo-gcloud-service
+ 
+provider:
+  name: google
+  runtime: nodejs14
+  project: playground-s-11-c023670f
+  memorySize: 1024
+  timeout: 90s
+
+  credentials: /home/zaavia/.config/gcloud/application_default_credentials.json # <- the path must be absolute
+
+	
+plugins:
+  - serverless-google-cloudfunctions
+  - serverless-express
+ 
+functions:
+  app:
+    handler: http
+    events:
+      - http: path

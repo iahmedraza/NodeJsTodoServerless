@@ -1,0 +1,16 @@
+service: todo-azure
+
+provider:
+  name: azure
+  runtime: nodejs14
+
+plugins:
+  - serverless-express
+  - serverless-azure-functions
+
+functions:
+  app:
+    handler: index.http
+    events:
+      - http: true
+        authLevel: anonymous

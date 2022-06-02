@@ -1,0 +1,19 @@
+resources:
+  - type: storage.v1.bucket
+    name: sls-todo-gcloud-service-dev-1654083572613
+  - type: gcp-types/cloudfunctions-v1:projects.locations.functions
+    name: todo-gcloud-service-dev-app
+    properties:
+      parent: projects/playground-s-11-c023670f/locations/us-central1
+      availableMemoryMb: 1024
+      runtime: nodejs14
+      timeout: 90s
+      entryPoint: http
+      function: todo-gcloud-service-dev-app
+      sourceArchiveUrl: >-
+        gs://sls-todo-gcloud-service-dev-1654083572613/serverless/todo-gcloud-service/dev/1654087102176-2022-06-01T12:38:22.176Z/todo-gcloud-service.zip
+      environmentVariables:
+        SERVERLESS_EXPRESS_PLATFORM: google
+      labels: {}
+      httpsTrigger:
+        url: path
