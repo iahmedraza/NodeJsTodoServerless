@@ -1,3 +1,0 @@
-resources:
-  - type: storage.v1.bucket
-    name: sls-todo-gcloud-service-dev-1654083572613
