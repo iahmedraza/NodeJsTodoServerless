@@ -1,8 +1,8 @@
 Run **npm i**
+Rename **.envExample** with **.env**
 
 # Running Locally 
-- Uncomment line app.listen and comment last export line
-- Rename **.envExample** with **.env**
+- In **.env** add STAGE=local
 - Run **npm start**
 
 # Running Commands Irrespective of Cloud

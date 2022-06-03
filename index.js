@@ -7,20 +7,30 @@ const serverless = require('serverless-express/handler');
 
 const app = express();
 app.use(express.json())
+
 app.get('/', (req, res)=> {
     res.send('hello')
 });
-mongoose.connect('mongodb+srv://ahmedraza:fEGJOwzVeldycgzS@cluster0.i30ko.mongodb.net/todoDB?retryWrites=true&w=majority');
+
+mongoose.connect(process.env.MONGO_URI+'/todoDB');
 const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error: "));
+db.on("error", console.error.bind(console, "db connection error: "));
 db.once("open", function () {
-  console.log("Connected successfully");
+  console.log("DB Connected successfully");
 });
+
 app.use("/api/",todoRoute);
 
+console.log(process.env.MONGO_URI+'/todoDB')
 
-// app.listen(7000, () => {
-//     console.log("APP listening to 7000")
-// });
+if (process.env.STAGE === 'local'){
 
-exports.http = serverless(app);
+  app.listen(7000, () => {
+    console.log("APP listening to 7000")
+  });
+
+} else {
+
+  exports.http = serverless(app);
+
+}
