@@ -1,8 +1,9 @@
 Run **npm i**
 
 # Running Locally 
-- Uncomment line app.listen
-- Run **node index.js**
+- Uncomment line app.listen and comment last export line
+- Rename **.envExample** with **.env**
+- Run **npm start**
 
 # Running Commands Irrespective of Cloud
 - Run **npm install -g serverless**
