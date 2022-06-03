@@ -7,6 +7,7 @@ Rename **.envExample** with **.env**
 
 # Running Commands Irrespective of Cloud
 - Run **npm install -g serverless**
+- Add mongodb atlas URI in **.env** file
 
 
 # Deploying App as Cloud Function on ***Google Cloud***
