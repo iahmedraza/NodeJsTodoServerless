@@ -2,7 +2,7 @@ Run **npm i**
 
 # Running Locally 
 - Uncomment line app.listen
-- Rnpun **node index.js**
+- Run **node index.js**
 
 # Running Commands Irrespective of Cloud
 - Run **npm install -g serverless**
@@ -29,7 +29,7 @@ Run **npm i**
 - After that you fill have credential path on your cmd replace that path with your serverless.yaml crendential path.
   - Run **serverless deploy**
  
-   **Wohoo Congrates You Have Deployed your todo app on Cloud Functio** 😀
+   **Wohoo Congrates You Have Deployed your todo app on Cloud Function** 😀
 
 
 
