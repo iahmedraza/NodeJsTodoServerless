@@ -1,4 +1,4 @@
-Run **npm i**
+Run **npm i** \
 Rename **.envExample** with **.env**
 
 # Running Locally 
